@@ -1,5 +1,4 @@
-pub fn stuff_pointer(){
+pub fn stuff_pointer() {
     let integer : i32 = 8;
-    println!("integer ref : {:p}", &integer);
-    
+    println!("integer ref : {:p}", &integer.clone());
 }

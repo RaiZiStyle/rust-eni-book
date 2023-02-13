@@ -1,7 +1,8 @@
 // pub mod pointer;
 #![allow(non_snake_case)]
 
-
+#[path = "./pointer2.rs"]
+mod pointer2;
 
 
 fn obtenir_type<T>(_: &T) {
@@ -42,6 +43,9 @@ pub fn exempleBoites() {
     println!("valeur2.1 = {}", valeur2.1);
     println!("valeur2.2 = {}", valeur2.2);
     println!("adresse pointée = {:p}", &valeur2);
+
+    println!("Called pointer2.rs from pointer.rs");
+    pointer2::stuff_pointer();
 }
 
 pub fn exemplePointeursBruts() {
