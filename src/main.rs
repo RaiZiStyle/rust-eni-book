@@ -14,4 +14,6 @@ fn main() {
     chap2::pointer::exempleBoites();
     chap2::pointer::exempleReferences();
     chap2::pointer::exemplePointeursBruts();
+
+    chap2::pointer2::stuff_pointer();
 }
