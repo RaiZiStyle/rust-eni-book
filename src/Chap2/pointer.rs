@@ -1,4 +1,5 @@
 // pub mod pointer;
+#![allow(non_snake_case)]
 
 fn obtenir_type<T>(_: &T) {
     println!("{}", std::any::type_name::<T>())

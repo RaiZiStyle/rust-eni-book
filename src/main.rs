@@ -1,13 +1,17 @@
 // use Chap2::pointer::exempleBoites;
 
-#[path = "./Chap2/pointer.rs"]
-#[allow(non_snake_case)]
-mod Chap2;
+// #[path = "./Chap2/pointer.rs"]
+// #[allow(non_snake_case)]
+// mod Chap2;
 // use Chap2::{exempleBoites, exemplePointeursBruts, exempleReferences};
 
+mod chap2;
+// use Chap2::{exempleBoites, exemplePointeursBruts, exempleReferences};
+// use chap2::pointer::{exempleBoites};
 
 fn main() {
-    Chap2::exempleBoites();
-    Chap2::exempleReferences();
-    Chap2::exemplePointeursBruts();
+
+    chap2::pointer::exempleBoites();
+    chap2::pointer::exempleReferences();
+    chap2::pointer::exemplePointeursBruts();
 }
