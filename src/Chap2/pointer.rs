@@ -1,4 +1,3 @@
-// pub mod pointer;
 #![allow(non_snake_case)]
 
 #[path = "./pointer2.rs"]
@@ -45,7 +44,10 @@ pub fn exempleBoites() {
     println!("adresse pointée = {:p}", &valeur2);
 
     println!("Called pointer2.rs from pointer.rs");
-    pointer2::stuff_pointer();
+    {
+        let integer : i32 = 8;
+        println!("integer ref : {:p}", &integer.clone());
+    };
 }
 
 pub fn exemplePointeursBruts() {

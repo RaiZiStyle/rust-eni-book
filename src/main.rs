@@ -15,5 +15,8 @@ fn main() {
     chap2::pointer::exempleReferences();
     chap2::pointer::exemplePointeursBruts();
 
-    chap2::pointer2::stuff_pointer();
+    // chap2::pointer2::stuff_pointer(); // For test
+
+    chap2::vec_array_slice::exempleSlice();
+    chap2::string::exempleString()
 }
