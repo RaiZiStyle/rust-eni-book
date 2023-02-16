@@ -1,0 +1,1 @@
+pub mod exemple_struct;
