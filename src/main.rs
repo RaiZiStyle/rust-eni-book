@@ -4,6 +4,7 @@ mod chap5;
 fn main() {
     // println!("Hello, world!");
 
+    // Possession et référence
     chap4::own_borrow::possession_chaine_tas();
     chap4::own_borrow::possession_entier_pile();
 
@@ -28,6 +29,7 @@ fn main() {
     chap4::own_borrow::modifier_chaine(&mut chaine3);
     println!("{}", chaine3);
 
+    // Structure
     let cercle_1 = chap5::exemple_struct::Cercle {
         coord_centre_x: 5,
         coord_centre_y: 5,
@@ -40,9 +42,51 @@ fn main() {
     println!("{}", cercle_1.nom_cercle);
 
     let point_a = chap5::exemple_struct::Point(1, 2, String::from("A"));
-    println!("{}", point_a.0); 
-    println!("{}", point_a.1); 
-    println!("{}", point_a.2); 
+    println!("{}", point_a.0);
+    println!("{}", point_a.1);
+    println!("{}", point_a.2);
 
-    
+    let rect = chap5::exemple_struct::Rectangle::new(5_f64, 10_f64);
+    println!("Périmètre : {}", rect.perimetre());
+    println!("Aire : {}", rect.aire());
+    println!("Valeur entière largeur : {}", rect.obtenir_largeur_int());
+    println!("Valeur entière longueur : {}", rect.obtenir_longueur_int());
+
+    println!("--- Exemple vecteur d'entiers ---");
+
+    let mut mon_vecteur = chap5::generic_struct::VecteurEntiers::creer();
+
+    println!(
+        "Taille courante du vecteur : {}",
+        mon_vecteur.obtenir_longueur()
+    );
+
+    mon_vecteur.ajouter(1);
+    mon_vecteur.ajouter(2);
+    mon_vecteur.ajouter(3);
+
+    println!(
+        "Taille courante du vecteur : {}",
+        mon_vecteur.obtenir_longueur()
+    );
+    println!(
+        "Quel est l'élément d'indice 2 : {}",
+        mon_vecteur.obtenir_element(2)
+    );
+    println!(
+        "On demande un indice au-delà de la taille 
+du vecteur : {}",
+        mon_vecteur.obtenir_element(42)
+    );
+
+    let mut mon_vecteur_generique = chap5::generic_struct::VecteurGenerique::<f64>::creer();
+    mon_vecteur_generique.ajouter(5.0);
+    mon_vecteur_generique.ajouter(4.9);
+    mon_vecteur_generique.ajouter(4.8);
+    mon_vecteur_generique.ajouter(4.7);
+
+    let mut mon_vecteur_generique_2 = chap5::generic_struct::VecteurGenerique::creer();
+    mon_vecteur_generique_2.ajouter("Hector");
+    mon_vecteur_generique_2.ajouter("Arthur");
+    mon_vecteur_generique_2.ajouter("Sophie");
 }
