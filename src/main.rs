@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 mod chap4;
 mod chap5;
 mod chap6;
@@ -168,4 +170,47 @@ du vecteur : {}",
     println!("{:?}", a);
     println!("{:?}", b);
     println!("{:?}", c);
+
+    let noeud1: chap6::enum_struct::Noeud<i64> = chap6::enum_struct::Noeud {
+        valeur: 1,
+        gauche: chap6::enum_struct::ArbreBinaire::Terminaison,
+        droite: chap6::enum_struct::ArbreBinaire::Terminaison,
+    };
+    let arbre1: chap6::enum_struct::ArbreBinaire<i64> =
+        chap6::enum_struct::ArbreBinaire::NonTerminaison(Box::new(noeud1));
+
+    let noeud2: chap6::enum_struct::Noeud<i64> = chap6::enum_struct::Noeud {
+        valeur: 2,
+        gauche: chap6::enum_struct::ArbreBinaire::Terminaison,
+        droite: chap6::enum_struct::ArbreBinaire::Terminaison,
+    };
+    let arbre2: chap6::enum_struct::ArbreBinaire<i64> =
+        chap6::enum_struct::ArbreBinaire::NonTerminaison(Box::new(noeud2));
+
+    let noeud3: chap6::enum_struct::Noeud<i64> = chap6::enum_struct::Noeud {
+        valeur: 3,
+        gauche: arbre1,
+        droite: arbre2,
+    };
+    let arbre3: chap6::enum_struct::ArbreBinaire<i64> =
+        chap6::enum_struct::ArbreBinaire::NonTerminaison(Box::new(noeud3));
+
+    let h: chap6::enum_struct::Personnage = chap6::enum_struct::Personnage::Heros;
+    let f = chap6::enum_struct::Personnage::Fantome {
+        points_de_vie: 25,
+        indice_invisibilite: 12,
+    };
+    let c = chap6::enum_struct::Personnage::Combattant { points_de_vie: 35 };
+    let m = chap6::enum_struct::Personnage::Magicien(34, 78);
+
+    println!("{}", chap6::enum_struct::filtrage_par_motif(h));
+    println!("{}", chap6::enum_struct::filtrage_par_motif(f));
+    println!("{}", chap6::enum_struct::filtrage_par_motif(c));
+    println!("{}", chap6::enum_struct::filtrage_par_motif(m));
+
+    let prenom = "Hector";
+    match prenom {
+        "Arthur" | "Sophie" | "Hector" => println!("Quel joli prénom."),
+        autre => println!("Quel prénom joli."),
+    };
 }
