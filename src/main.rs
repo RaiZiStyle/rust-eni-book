@@ -1,6 +1,7 @@
 #![allow(unused_variables)]
 
 mod chap2;
+mod chap3;
 mod chap4;
 mod chap5;
 mod chap6;
@@ -14,7 +15,6 @@ fn main() {
 
     chap2::vec_array_slice::exempleSlice();
     chap2::string::exempleString();
-
 
     chap3::own_borrow::possession_chaine_tas();
     chap3::own_borrow::possession_entier_pile();
@@ -225,5 +225,4 @@ du vecteur : {}",
         "Arthur" | "Sophie" | "Hector" => println!("Quel joli prénom."),
         autre => println!("Quel prénom joli."),
     };
-    
 }

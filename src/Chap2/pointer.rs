@@ -3,7 +3,6 @@
 #[path = "./pointer2.rs"]
 mod pointer2;
 
-
 fn obtenir_type<T>(_: &T) {
     println!("{}", std::any::type_name::<T>())
 }
