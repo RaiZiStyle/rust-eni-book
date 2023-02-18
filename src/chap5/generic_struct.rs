@@ -49,26 +49,25 @@ impl<T> VecteurGenerique<T> {
 }
 
 /// Structure qui point sur une réference
-pub struct Exemple<'a> { 
-    pub ii: &'a i64 
+pub struct Exemple<'a> {
+    pub ii: &'a i64,
 }
 
 // Ne compile pas car pas de lifetime
-// struct Exemple2 { 
-//     ii: &i64 
-// } 
+// struct Exemple2 {
+//     ii: &i64
+// }
 
 pub struct Exemple2 {
-    pub ii : i64
+    pub ii: i64,
 }
 
-pub(crate) struct Exemple3{ 
-    pub(crate) ii: &'static i64 
-} 
+pub(crate) struct Exemple3 {
+    pub(crate) ii: &'static i64,
+}
 
-
-#[derive(Copy, Clone, Debug, PartialEq)] 
-pub struct Point { 
-   pub xx : i64, 
-   pub yy  : i64, 
-} 
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub struct Point {
+    pub xx: i64,
+    pub yy: i64,
+}

@@ -18,10 +18,7 @@ pub struct Rectangle {
 
 impl Rectangle {
     pub fn new(longueur: f64, largeur: f64) -> Rectangle {
-        Rectangle {
-            largeur,
-            longueur,
-        }
+        Rectangle { largeur, longueur }
     }
 
     pub fn perimetre(&self) -> f64 {

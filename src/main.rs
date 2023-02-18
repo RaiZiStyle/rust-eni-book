@@ -1,7 +1,6 @@
-use crate::chap5::generic_struct::Exemple2;
-
 mod chap4;
 mod chap5;
+mod chap6;
 
 fn main() {
     // println!("Hello, world!");
@@ -93,9 +92,9 @@ du vecteur : {}",
     let exemple = chap5::generic_struct::Exemple { ii: &valeur };
     println!("Affichage de ii : {}", exemple.ii);
 
-    static VALEUR_2: Exemple2 = chap5::generic_struct::Exemple2 { ii: 3 };
+    static VALEUR_2: chap5::generic_struct::Exemple2 = chap5::generic_struct::Exemple2 { ii: 3 };
 
-    let ref_static_valeur2: &'static Exemple2 = &VALEUR_2;
+    let ref_static_valeur2: &'static chap5::generic_struct::Exemple2 = &VALEUR_2;
     println!("Affichage de ii - exemple 2 : {}", ref_static_valeur2.ii);
 
     static VALEUR_3: i64 = 2;
@@ -122,4 +121,51 @@ du vecteur : {}",
     if p3 == p1 {
         println!("PartialEq : {}", p3 == p1);
     }
+
+    // Chapitre 6 : Enumérations et motifs dans Rust
+    let ain: i64 = chap6::enums::Departement::Ain as i64;
+    println!("{:?}", ain);
+    let aisne: i64 = chap6::enums::Departement::Ardeche as i64;
+    println!("{:?}", aisne);
+
+    let resultat_reste_1 = chap6::enums::reste_division(16, 9);
+    println!("{:?}", resultat_reste_1);
+
+    let resultat_reste_2 = chap6::enums::reste_division(13, 0);
+    println!(
+        "Valeur entière : {}",
+        chap6::enums::obtenir_valeur_numerique(resultat_reste_1)
+    );
+    println!(
+        "Valeur entière : {}",
+        chap6::enums::obtenir_valeur_numerique(resultat_reste_2)
+    );
+
+    let departement_1: Option<chap6::enums::Departement> = chap6::enums::i64_vers_enum(5);
+    println!(
+        "Département correspondant au numéro 5 : {:?}",
+        departement_1
+    );
+    let departement_135: Option<chap6::enums::Departement> = chap6::enums::i64_vers_enum(135);
+    println!(
+        "Département correspondant au numéro 135 : {:?}",
+        departement_135
+    );
+
+    let alpesmaritimes: chap6::enums::Departement = chap6::enums::Departement::AlpesMaritimes;
+    let alpesmaritimes_str = alpesmaritimes.conversion_str();
+    println!(
+        "Méthode d'énumération utilisant un match : {}",
+        alpesmaritimes_str
+    );
+
+    let a: chap6::enum_struct::Exemple = chap6::enum_struct::Exemple::A;
+    let b: chap6::enum_struct::Exemple = chap6::enum_struct::Exemple::B(Some("test B".to_string()));
+    let c: chap6::enum_struct::Exemple = chap6::enum_struct::Exemple::C {
+        champ_nomme_1: "test B".to_string(),
+        champ_nomme_2: 23,
+    };
+    println!("{:?}", a);
+    println!("{:?}", b);
+    println!("{:?}", c);
 }
