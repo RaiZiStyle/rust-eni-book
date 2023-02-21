@@ -6,6 +6,10 @@ mod chap4;
 mod chap5;
 mod chap6;
 
+extern crate animal;
+use crate::animal::mod_animal::Animal; 
+
+
 fn main() {
     chap2::pointer::exempleBoites();
     chap2::pointer::exempleReferences();
@@ -225,4 +229,20 @@ du vecteur : {}",
         "Arthur" | "Sophie" | "Hector" => println!("Quel joli prénom."),
         autre => println!("Quel prénom joli."),
     };
+
+    // Chapitre 7 : Les trais en Rust
+    // animal::add(2, 2);
+
+    let nom_chien: String = "Toto le cabot".to_string();
+    let toto = animal::mod_animal::Chien::creer(nom_chien);
+    println!("{}", toto.obtenir_nom());
+    toto.afficher();
+
+    let nom_chat : String = "Kiki le chaton".to_string(); 
+    let kiki = animal::mod_animal::Chat::creer(nom_chat); 
+    println!("{}", kiki.obtenir_nom()); 
+    kiki.dormir(); 
+    kiki.afficher(); 
+
+
 }

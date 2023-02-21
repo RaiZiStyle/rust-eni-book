@@ -3,5 +3,12 @@
 version = 3
 
 [[package]]
+name = "animal"
+version = "0.1.0"
+
+[[package]]
 name = "rust-eni-book"
 version = "0.1.0"
+dependencies = [
+ "animal",
+]
