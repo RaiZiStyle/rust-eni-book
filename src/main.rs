@@ -1,10 +1,13 @@
 #![allow(unused_variables)]
 
+use crate::chap7::traits::mod_animal::Animal;
+
 mod chap2;
 mod chap3;
 mod chap4;
 mod chap5;
 mod chap6;
+mod chap7;
 
 fn main() {
     chap2::pointer::exempleBoites();
@@ -225,4 +228,17 @@ du vecteur : {}",
         "Arthur" | "Sophie" | "Hector" => println!("Quel joli prénom."),
         autre => println!("Quel prénom joli."),
     };
+
+
+    let nom_chien : String = "Toto le cabot".to_string(); 
+    let toto = chap7::traits::mod_animal::Chien::creer(nom_chien); 
+    println!("{}", toto.obtenir_nom()); 
+    toto.afficher(); 
+    let nom_chat : String = "Kiki le chaton".to_string(); 
+    let kiki = chap7::traits::mod_animal::Chat::creer(nom_chat); 
+    println!("{}", kiki.obtenir_nom()); 
+    kiki.dormir(); 
+    kiki.afficher()
+    
+    
 }
