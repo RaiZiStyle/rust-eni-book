@@ -1,5 +1,7 @@
 #![allow(unused_variables)]
 
+use crate::chap7::traits::mod_animal::Animal;
+
 mod chap2;
 mod chap3;
 mod chap4;
