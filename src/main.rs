@@ -1,6 +1,6 @@
 #![allow(unused_variables)]
 
-use crate::chap7::traits::mod_animal::Animal;
+// use crate::chap7::traits::mod_animal::Animal;
 
 mod chap2;
 mod chap3;
@@ -245,6 +245,9 @@ du vecteur : {}",
     println!("{}", kiki.obtenir_nom()); 
     kiki.dormir(); 
     kiki.afficher(); 
+
+    println!("Le plus long nom des deux : {}", 
+    animal::mod_animal::getbiggestname(&kiki, &toto)); 
 
 
 }
