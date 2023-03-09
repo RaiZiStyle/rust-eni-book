@@ -7,9 +7,11 @@ mod chap3;
 mod chap4;
 mod chap5;
 mod chap6;
+mod chap7;
 
 extern crate animal;
-use crate::animal::mod_animal::Animal; 
+use crate::animal::mod_animal::Animal;
+
 
 
 fn main() {
@@ -247,7 +249,17 @@ du vecteur : {}",
     kiki.afficher(); 
 
     println!("Le plus long nom des deux : {}", 
-    animal::mod_animal::getbiggestname(&kiki, &toto)); 
+    animal::mod_animal::getbiggestname(&kiki, &toto));
+
+    // Une tortue (implémentation de deux traits). 
+    println!("--- Deux traits, Tortue et Display ---"); 
+    let nom_tortue : String = "Tutu la tortue".to_string(); 
+    let tutu = chap7::traits_with_param::Tortue::creer(nom_tortue); 
+    println!("{}", tutu); 
+    chap7::traits_with_param::affichage_format(&tutu); 
+    // Marche pas car, toto : Chat n'implémente pas la fonction display
+    // chap7::traits_with_param::affichage_format(&toto);
+
 
 
 }
