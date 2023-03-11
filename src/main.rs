@@ -261,5 +261,11 @@ du vecteur : {}",
     // chap7::traits_with_param::affichage_format(&toto);
 
 
+    let petit_goujon = chap7::traits_with_param::Goujon::creer("Toto".to_string());
+    petit_goujon.afficher();
+
+    // let gros_poisson = chap7::traits_with_param::Poisson
+
+
 
 }

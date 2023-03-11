@@ -22,6 +22,8 @@ pub mod mod_animal {
         animal.afficher();
     }
 
+    
+
     // pub fn getbiggestname(animal1: &impl Animal, animal2: &impl Animal) -> String
     // pub fn getbiggestname<T: Animal>(animal1: &T, animal2: &T) -> String # Sucre syntaxique
     pub fn getbiggestname(animal1: &impl Animal, animal2: &impl Animal) -> String {
